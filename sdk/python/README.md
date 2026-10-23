@@ -112,6 +112,12 @@ async def summarize(state: ResearchState) -> ResearchState:
     ...
 ```
 
+`@workflow.state` preserves the model type, and `@workflow.step` preserves the
+decorated function's signature for both synchronous and asynchronous steps, with
+or without decorator options. The package includes a `py.typed` marker for type
+checkers. Annotate each step's parameters and return value: the state type is not
+inferred automatically from the model registered with `@workflow.state`.
+
 ### Hello World — YAML
 
 ```yaml

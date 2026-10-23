@@ -415,6 +415,9 @@ JamJet uses [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ### Fixed
 
+- **Python SDK: preserve workflow step signatures for type checkers.** Both bare
+  and configured `@workflow.step` decorators retain parameter and return types,
+  including async return types. The package now includes a `py.typed` marker.
 - **Runtime: an unmatched API request is a JSON 404, not the web UI.** The SPA
   fallback answered every unmatched path, for every method, with `200 text/html`
   (`index.html`). A client on a wrong path saw a success, failed to parse the body,
